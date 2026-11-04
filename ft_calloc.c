@@ -3,10 +3,10 @@
 /*                                                       :::      ::::::::    */
 /*   ft_calloc.c                                       :+:      :+:    :+:    */
 /*                                                   +:+ +:+         +:+      */
-/*   By: gcerto-m <gcerto-m@student.42porto.com>   #+#  +:+       +#+         */
+/*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/11/03 16:19:45 by gcerto-m         #+#    #+#              */
-/*   Updated: 2026/11/03 16:26:43 by gcerto-m        ###   ########.fr        */
+/*   Created: 2026/11/03 16:19:45 by username         #+#    #+#              */
+/*   Updated: 2026/11/04 10:55:04 by username        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,16 @@
 
 void	*calloc(size_t nmemb, size_t size)
 {
-	size_t	index;
-	void	*ptr;
+	size_t			index;
+	unsigned char	*ptr;
 
 	if (nmemb == 0 || size == 0)
 		return (0);
-	index = nmemb * size;
+	index = 0;
 	ptr = malloc(size * nmemb);
+	while (index != size * nmemb)
+	{
+		ptr[index] = 0;
+	}
 	return (ptr);
 }
