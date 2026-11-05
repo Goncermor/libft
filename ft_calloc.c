@@ -3,28 +3,22 @@
 /*                                                       :::      ::::::::    */
 /*   ft_calloc.c                                       :+:      :+:    :+:    */
 /*                                                   +:+ +:+         +:+      */
-/*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
+/*   By: gcerto-m <gcerto-m@student.42porto.com>   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/11/03 16:19:45 by username         #+#    #+#              */
-/*   Updated: 2026/11/04 10:55:04 by username        ###   ########.fr        */
+/*   Created: 2026/11/03 16:19:45 by gcerto-m         #+#    #+#              */
+/*   Updated: 2026/11/04 12:57:01 by gcerto-m        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 #include <stdlib.h>
 
 void	*calloc(size_t nmemb, size_t size)
 {
-	size_t			index;
 	unsigned char	*ptr;
 
-	if (nmemb == 0 || size == 0)
-		return (0);
-	index = 0;
 	ptr = malloc(size * nmemb);
-	while (index != size * nmemb)
-	{
-		ptr[index] = 0;
-	}
+	if (ptr != 0)
+		ft_bzero(ptr, size * nmemb);
 	return (ptr);
 }
