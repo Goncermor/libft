@@ -20,6 +20,10 @@ static char	contains_char(char *str, char c)
 	return (0);
 }
 
+/// @brief 
+/// @param s1 
+/// @param set 
+/// @return 
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	unsigned int	len;

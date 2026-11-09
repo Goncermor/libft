@@ -6,18 +6,22 @@
 /*   By: gcerto-m <gcerto-m@student.42porto.com>   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/04 15:05:57 by gcerto-m         #+#    #+#              */
-/*   Updated: 2026/11/04 15:13:24 by gcerto-m        ###   ########.fr        */
+/*   Updated: 2026/11/09 14:48:06 by gcerto-m        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
+/// @brief 
+/// @param s1 
+/// @param s2 
+/// @return 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	unsigned int	s1_len;
-	unsigned int	s2_len;
-	char			*ptr;
+	size_t	s1_len;
+	size_t	s2_len;
+	char	*ptr;
 
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2);

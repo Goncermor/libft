@@ -6,19 +6,24 @@
 /*   By: gcerto-m <gcerto-m@student.42porto.com>   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/04 12:26:20 by gcerto-m         #+#    #+#              */
-/*   Updated: 2026/11/04 12:32:08 by gcerto-m        ###   ########.fr        */
+/*   Updated: 2026/11/09 15:00:42 by gcerto-m        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
+/// @brief 
+/// @param s 
+/// @param c 
+/// @return 
 char	*ft_strrchr(const char *s, int c)
 {
-	const char	*ptr;
+	char	*ptr;
 
 	ptr = 0;
 	while (*s != '\0')
 	{
 		if (*s == c)
 			ptr = s;
+		s++;
 	}
 	if (c == '\0')
 		ptr = s;

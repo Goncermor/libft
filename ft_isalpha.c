@@ -12,6 +12,9 @@
 
 // Returns 1 if the tested char is alphabetical and 0 if it's not.
 
+/// @brief 
+/// @param c 
+/// @return 
 int	ft_isalpha(int c)
 {
 	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))

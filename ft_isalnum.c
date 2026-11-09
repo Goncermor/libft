@@ -12,6 +12,9 @@
 
 // Returns 1 if the tested char is a digit and 0 if it's not.
 
+/// @brief 
+/// @param c 
+/// @return 
 int	ft_isalnum(int c)
 {
 	if ((c >= 'A' && c <= 'Z')

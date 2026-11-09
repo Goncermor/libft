@@ -6,21 +6,27 @@
 /*   By: gcerto-m <gcerto-m@student.42porto.com>   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/04 12:44:20 by gcerto-m         #+#    #+#              */
-/*   Updated: 2026/11/05 14:49:49 by gcerto-m        ###   ########.fr        */
+/*   Updated: 2026/11/09 14:54:38 by gcerto-m        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/// @brief 
+/// @param s 
+/// @param c 
+/// @param n 
+/// @return 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char	*ptr;
+	unsigned char	*ptr;
 
-	ptr = (char *) s;
+	ptr = (unsigned char *) s;
 	while (*ptr != '\0')
 	{
 		if (*ptr == c)
 			return (ptr);
+		ptr++;
 	}
 	if (c == '\0')
 		return (ptr);

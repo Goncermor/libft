@@ -12,8 +12,9 @@
 
 #include <stddef.h>
 
-// Returns the length of a string
-
+/// @brief 
+/// @param s 
+/// @return 
 size_t	ft_strlen(const char *s)
 {
 	size_t	len;

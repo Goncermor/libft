@@ -12,6 +12,9 @@
 
 #include <unistd.h>
 
+/// @brief 
+/// @param c 
+/// @param fd 
 void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);

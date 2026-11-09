@@ -6,14 +6,18 @@
 /*   By: gcerto-m <gcerto-m@student.42porto.com>   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/04 13:00:04 by gcerto-m         #+#    #+#              */
-/*   Updated: 2026/11/04 13:01:02 by gcerto-m        ###   ########.fr        */
+/*   Updated: 2026/11/09 14:44:23 by gcerto-m        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <unistd.h>
 
+/// @brief 
+/// @param s 
+/// @param fd 
 void	ft_putstr_fd(char *s, int fd)
 {
-	write(fd, s, ft_strlen(s));
+	while (*s != '\0')
+		ft_putchar_fd(*s, fd);
 }

@@ -12,6 +12,9 @@
 
 // Returns 1 if the tested char is a digit and 0 if it's not.
 
+/// @brief 
+/// @param c 
+/// @return 
 int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')

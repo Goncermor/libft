@@ -13,6 +13,9 @@
 #include "libft.h"
 #include <stdlib.h>
 
+/// @brief 
+/// @param s 
+/// @return 
 char	*ft_strdup(const char *s)
 {
 	char	*ptr;

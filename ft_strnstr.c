@@ -6,13 +6,18 @@
 /*   By: gcerto-m <gcerto-m@student.42porto.com>   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/05 15:13:40 by gcerto-m         #+#    #+#              */
-/*   Updated: 2026/11/06 10:52:24 by gcerto-m        ###   ########.fr        */
+/*   Updated: 2026/11/09 16:20:33 by gcerto-m        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strnstr(const char *big, const char *little, size_t len)
+/// @brief 
+/// @param big 
+/// @param little 
+/// @param len 
+/// @return 
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	unsigned int	little_len;
 
