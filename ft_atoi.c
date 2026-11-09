@@ -6,7 +6,7 @@
 /*   By: gcerto-m <gcerto-m@student.42porto.com>   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/04 10:59:01 by gcerto-m         #+#    #+#              */
-/*   Updated: 2026/11/04 11:31:48 by gcerto-m        ###   ########.fr        */
+/*   Updated: 2026/11/09 11:40:59 by gcerto-m        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,17 @@ int	ft_atoi(const char *nptr)
 	result = 0;
 	while (ft_isspace(*nptr))
 		nptr++;
+	if (*nptr == '+')
+		nptr++;
 	if (*nptr == '-')
+	{
 		mult = -1;
-	nptr++;
+		nptr++;
+	}
 	while (ft_isdigit(*nptr))
-		result = result * 10 + (*nptr - 30);
+	{
+		result = result * 10 + (*nptr - '0');
+		nptr++;
+	}
 	return (result * mult);
 }

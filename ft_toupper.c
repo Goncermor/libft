@@ -6,14 +6,14 @@
 /*   By: gcerto-m <gcerto-m@student.42porto.com>   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/03 13:45:23 by gcerto-m         #+#    #+#              */
-/*   Updated: 2026/11/03 15:21:46 by gcerto-m        ###   ########.fr        */
+/*   Updated: 2026/11/06 14:15:06 by gcerto-m        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
-		return (c - 30);
+		return (c - 32);
 	else
 		return (c);
 }

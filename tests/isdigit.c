@@ -12,14 +12,18 @@
 
 #include <stdio.h>
 #include <ctype.h>
-#include "../ft_isdigit.c"
+#include "../libft.h"
 
 int	main(int argc, char *argv[])
 {
 	if (argc > 1)
 	{
-		printf("isdigit(\"%c\") -> %d\n", argv[1][0], isdigit(argv[1][0]));
-		printf("ft_isdigit(\"%c\") -> %d\n", argv[1][0], ft_isdigit(argv[1][0]));
+		printf("isdigit(\'%c\') -> %d\n",
+			argv[1][0],
+			isdigit(argv[1][0]));
+		printf("ft_isdigit(\'%c\') -> %d\n",
+			argv[1][0],
+			ft_isdigit(argv[1][0]));
 		return (0);
 	}
 	else

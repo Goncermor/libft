@@ -12,12 +12,12 @@
 
 // Returns 1 if the tested char is a digit and 0 if it's not.
 
-int	ft_isdigit(int c)
+int	ft_isalnum(int c)
 {
-	if ((c >= 'A' && c <= 'Z') ||
-		(c >= 'a' && c <= 'z') ||
-	    (c >= '0' && c <= '9'))
-	return (1);
+	if ((c >= 'A' && c <= 'Z')
+		|| (c >= 'a' && c <= 'z')
+		|| (c >= '0' && c <= '9'))
+		return (1);
 	else
 		return (0);
 }

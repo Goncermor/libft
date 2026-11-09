@@ -12,6 +12,7 @@ SOURCES=${wildcard ft_*.c}
 ${NAME}:
 	${CC} ${CFLAGS} ${SOURCES}
 	${AR} ${ARFLAGS} ${NAME} ${SOURCES:.c=.o}
+	#ranlib
 
 all: ${NAME}
 

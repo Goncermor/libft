@@ -1,17 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   fd_putendl_fd.c                                   :+:      :+:    :+:    */
+/*   ft_putendl_fd.c                                   :+:      :+:    :+:    */
 /*                                                   +:+ +:+         +:+      */
 /*   By: gcerto-m <gcerto-m@student.42porto.com>   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/11/04 13:01:45 by gcerto-m         #+#    #+#              */
-/*   Updated: 2026/11/05 14:39:40 by gcerto-m        ###   ########.fr        */
+/*   Created: 2026/11/03 12:20:56 by gcerto-m         #+#    #+#              */
+/*   Updated: 2026/11/06 12:14:53 by gcerto-m        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putendl_fd(char *s, int fd)
+#include <unistd.h>
+#include <stdio.h>
+#include "../libft.h"
+
+int	main(int argc, char *argv[])
 {
-	write(fd, s, ft_strlen(s));
-	write(fd, "\n", 1);
+	if (argc > 1)
+	{
+		write(1, "If you see the string you passed as argument below:\n", 52);
+		ft_putendl_fd(argv[1], 1);
+		write(1, "The function works.", 20);
+		return (0);
+	}
+	else
+	{
+		printf("Invalid argument:\n\tProgram use: %s <string>\n", argv[0]);
+		return (1);
+	}
 }
