@@ -17,4 +17,12 @@
 /// @param del 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
+	t_list	*next;
+
+	while (*lst != 0)
+	{
+		next = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = next;
+	}
 }

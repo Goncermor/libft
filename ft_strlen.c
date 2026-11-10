@@ -6,15 +6,16 @@
 /*   By: gcerto-m <gcerto-m@student.42porto.com>   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/03 13:45:23 by gcerto-m         #+#    #+#              */
-/*   Updated: 2026/11/03 16:02:24 by gcerto-m        ###   ########.fr        */
+/*   Updated: 2026/11/10 11:19:21 by gcerto-m        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-/// @brief 
-/// @param s 
-/// @return 
+/// @brief
+/// @param s
+/// @return
+
 size_t	ft_strlen(const char *s)
 {
 	size_t	len;

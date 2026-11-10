@@ -6,38 +6,52 @@
 /*   By: gcerto-m <gcerto-m@student.42porto.com>   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/04 15:14:12 by gcerto-m         #+#    #+#              */
-/*   Updated: 2026/11/04 15:24:01 by gcerto-m        ###   ########.fr        */
+/*   Updated: 2026/11/10 13:17:18 by gcerto-m        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
-static char	contains_char(char *str, char c)
+#include "libft.h"
+#include <stdlib.h>
+
+static char	contains_char(const char *str, char c)
 {
 	while (*str != '\0')
 	{
 		if (*str == c)
 			return (1);
+		str++;
 	}
 	return (0);
 }
 
-/// @brief 
-/// @param s1 
-/// @param set 
-/// @return 
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	unsigned int	len;
-	unsigned int	index_after;
-	unsigned int	index_before;
+	unsigned int	index;
+	char			*ptr;
 
-	len = 0;
-	index_after = 0;
-	while (contains_char(set, s1[index_after]))
-		index_after++;
-	while (contains_char(set, s1[index_before]))
-		index_before--;
-	while (s1[index_after)
-			while (!contains_char(set, s1[index]))
-		{
-		}
+	len = ft_strlen(s1);
+	index = len - 1;
+	while (contains_char(set, s1[index]) == 1)
+	{
+		index--;
+		len--;
+	}
+	index = 0;
+	while (contains_char(set, s1[index]) == 1)
+	{
+		index++;
+		len--;
+	}
+	ptr = malloc(len + 1);
+	ptr[len] = '\0';
+	index = 0;
+	while (contains_char(set, s1[index]) == 1)
+		index++;
+	while (*ptr != '\0')
+	{
+		*ptr = s1[index];
+		index++;
+		ptr++;
+	}
 }

@@ -6,17 +6,18 @@
 /*   By: gcerto-m <gcerto-m@student.42porto.com>   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/03 16:00:49 by gcerto-m         #+#    #+#              */
-/*   Updated: 2026/11/09 16:00:03 by gcerto-m        ###   ########.fr        */
+/*   Updated: 2026/11/10 14:51:08 by gcerto-m        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+#include <stdlib.h>
 
-/// @brief 
-/// @param dest 
-/// @param src 
-/// @param n 
-/// @return 
+/// @brief
+/// @param dest
+/// @param src
+/// @param n
+/// @return
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	size_t			index;

@@ -2,9 +2,7 @@
 
 # Description
 
-
 # Instructions
-
 
 # Resources
 

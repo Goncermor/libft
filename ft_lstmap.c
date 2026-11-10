@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 /// @brief 
 /// @param lst 
@@ -19,4 +20,15 @@
 /// @return 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
+	t_list	*new_lst;
+	t_list	*next;
+
+	while (lst != 0)
+	{
+		ft_lstadd_back(&new_lst, ft_lstnew(f(lst->content)));
+		next = lst->next;
+		ft_lstdelone(lst, del);
+		lst = next;
+	}
+	return (new_lst);
 }

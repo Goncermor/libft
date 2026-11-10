@@ -6,14 +6,15 @@
 /*   By: gcerto-m <gcerto-m@student.42porto.com>   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/09 16:07:23 by gcerto-m         #+#    #+#              */
-/*   Updated: 2026/11/09 16:07:29 by gcerto-m        ###   ########.fr        */
+/*   Updated: 2026/11/10 12:42:16 by gcerto-m        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
-/// @brief 
-/// @param s 
-/// @param c 
-/// @return 
+/// @brief
+/// @param s
+/// @param c
+/// @return
+
 char	**ft_split(char const *s, char c)
 {
 }

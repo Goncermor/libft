@@ -6,43 +6,58 @@
 /*   By: gcerto-m <gcerto-m@student.42porto.com>   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/06 17:07:03 by gcerto-m         #+#    #+#              */
-/*   Updated: 2026/11/06 17:07:31 by gcerto-m        ###   ########.fr        */
+/*   Updated: 2026/11/10 16:26:11 by gcerto-m        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-/// @brief 
-/// @param n 
-/// @return 
+/// @brief Counts the digits with dcount and returns the absolute value.
+/// @param num[in] Number being counted
+/// @param dcount[out] Pointer to digit count
+/// @return Absolute value of num.
+static unsigned char	number_size(long num, unsigned char *dcount)
+{
+	unsigned int	absnum;
+
+	*dcount = 0;
+	if (num < 0)
+	{
+		(*dcount)++;
+		num = -num;
+	}
+	absnum = num;
+	while (num != 0)
+	{
+		(*dcount)++;
+		num /= 10;
+	}
+	if (num == 0)
+		*dcount = 1;
+	return (absnum);
+}
+
 char	*ft_itoa(int n)
 {
-	unsigned int	len;
-	int				temp_n;
+	unsigned int	num;
+	unsigned char	len;
 	char			*ptr;
 
-	len = 0;
+	num = number_size(n, &len);
+	ptr = malloc(len + 1);
+	ptr[len] = '\0';
+	len--;
 	if (n < 0)
-		temp_n = -n;
-	else
-		temp_n = n;
-	while (temp_n < 10)
+		ptr[0] = '-';
+	ptr[len] = '0' + num % 10;
+	len--;
+	num /= 10;
+	while (num != 0)
 	{
-		temp_n /= 10;
-		len++;
-	}
-	if (temp_n < 0)
-		ptr = malloc(len);
-	else
-		ptr = malloc(len + 1);
-	while (n > 10)
-	{
-		ptr[len] = n % 10;
-		n /= 10;
+		ptr[len] = '0' + num % 10;
 		len--;
+		num /= 10;
 	}
-	if (temp_n < 0)
-		ptr[len] = '-';
 	return (ptr);
 }
