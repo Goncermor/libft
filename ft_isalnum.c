@@ -10,17 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// Returns 1 if the tested char is a digit and 0 if it's not.
+#include "libft.h"
 
 /// @brief 
 /// @param c 
 /// @return 
 int	ft_isalnum(int c)
 {
-	if ((c >= 'A' && c <= 'Z')
-		|| (c >= 'a' && c <= 'z')
-		|| (c >= '0' && c <= '9'))
-		return (1);
-	else
-		return (0);
+	return (ft_isalpha(c) == 1 || ft_isdigit(c) == 1);
 }

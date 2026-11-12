@@ -19,9 +19,6 @@ static int	isspace(int c)
 		|| c == '\t' || c == '\v');
 }
 
-/// @brief Converts the initial portion of the string pointed to by nptr to int
-/// @param nptr String to be converted
-/// @return Converted Value
 int	ft_atoi(const char *nptr)
 {
 	char	mult;

@@ -13,11 +13,7 @@
 #include "libft.h"
 #include <stdlib.h>
 
-/// @brief Counts the digits with dcount and returns the absolute value.
-/// @param num[in] Number being counted
-/// @param dcount[out] Pointer to digit count
-/// @return Absolute value of num.
-static unsigned char	number_size(long num, unsigned char *dcount)
+static unsigned int	number_size(long num, unsigned char *dcount)
 {
 	unsigned int	absnum;
 
@@ -28,13 +24,13 @@ static unsigned char	number_size(long num, unsigned char *dcount)
 		num = -num;
 	}
 	absnum = num;
+	if (num == 0)
+		*dcount = 1;
 	while (num != 0)
 	{
 		(*dcount)++;
 		num /= 10;
 	}
-	if (num == 0)
-		*dcount = 1;
 	return (absnum);
 }
 
@@ -53,7 +49,7 @@ char	*ft_itoa(int n)
 	ptr[len] = '0' + num % 10;
 	len--;
 	num /= 10;
-	while (num != 0)
+	while (num > 0)
 	{
 		ptr[len] = '0' + num % 10;
 		len--;
