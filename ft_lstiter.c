@@ -12,9 +12,6 @@
 
 #include "libft.h"
 
-/// @brief 
-/// @param lst 
-/// @param f 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	while (lst != 0)

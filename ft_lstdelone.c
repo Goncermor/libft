@@ -13,9 +13,6 @@
 #include "libft.h"
 #include <stdlib.h>
 
-/// @brief
-/// @param lst
-/// @param del
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	del(lst->content);

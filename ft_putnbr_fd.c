@@ -12,9 +12,6 @@
 
 #include "libft.h"
 
-/// @brief 
-/// @param n 
-/// @param fd 
 void	ft_putnbr_fd(int n, int fd)
 {
 	unsigned int	num;

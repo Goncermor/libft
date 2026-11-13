@@ -13,10 +13,6 @@
 #include "libft.h"
 #include <stdlib.h>
 
-/// @brief 
-/// @param nmemb 
-/// @param size 
-/// @return 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	unsigned char	*ptr;

@@ -13,46 +13,59 @@
 #include "../libft.h"
 #include <string.h>
 #include <stdbool.h>
-#include <stdlib.h>
+#include <stdio.h>
 
-bool	test_atoi(char *ns, int ni)
+bool	test_atoi(int nums[], size_t sz)
 {
-	if (ft_atoi(ns) == ni)
-		return (true);
-	else
-		return (false);
+	char	str[16];
+
+	while (sz != 0)
+	{
+		bzero(str, 16);
+		snprintf(str, 16, "%d", nums[sz - 1]);
+		if (ft_atoi(str) != nums[sz - 1])
+		{
+			ft_putendl_fd("ft_atoi \e[1;91mFAIL\033[0m", 1);
+			return (false);
+		}
+		sz--;
+	}
+	ft_putendl_fd("ft_atoi \e[1;92mPASS\033[0m", 1);
+	return (true);
 }
 
-bool	test_itoa(char *ns, int ni)
+bool	test_itoa(int nums[], size_t sz)
 {
-	if (strcmp(ft_iota(ni), ns) == 0)
-		return (true);
-	else
-		return (false);
+	char	str[16];
+
+	while (sz != 0)
+	{
+		bzero(str, 16);
+		snprintf(str, 16, "%d", nums[sz - 1]);
+		if (strcmp(ft_itoa(nums[sz - 1]), str) != 0)
+		{
+			ft_putendl_fd("ft_atoi \e[1;91mFAIL\033[0m", 1);
+			return (false);
+		}
+		sz--;
+	}
+	ft_putendl_fd("ft_atoi \e[1;92mPASS\033[0m", 1);
+	return (true);
 }
 
 int	main(void)
 {
-	int	num;
+	int	nums[7];
 
-	num = -2147483648;
-	while (num <= 2147483647)
-	{
-		if (test_atoi(atoi(num), num) == false)
-		{
-			ft_putendl_fd("ft_atoi \e[1;91mFAIL\033[0m", 1);
-			return (1);
-		}
-	}
-	ft_putendl_fd("ft_atoi \e[1;92mPASS\033[0m", 1);
-	num = -2147483648;
-	while (num <= 2147483647)
-	{
-		if (test_itoa(atoi(num), num) == false)
-		{
-			ft_putendl_fd("ft_itoa \e[1;91mFAIL\033[0m", 1);
-			return (1);
-		}
-	}
-	ft_putendl_fd("ft_itoa \e[1;92mPASS\033[0m", 1);
+	nums[0] = 0;
+	nums[1] = 42;
+	nums[2] = -42;
+	nums[3] = 12345;
+	nums[4] = -12345;
+	nums[5] = 2147483647;
+	nums[6] = -2147483648;
+	usleep(50000);
+	test_atoi(nums, 7);
+	usleep(50000);
+	test_itoa(nums, 7);
 }

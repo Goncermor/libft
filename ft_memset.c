@@ -12,11 +12,6 @@
 
 #include <stddef.h>
 
-/// @brief 
-/// @param s 
-/// @param c 
-/// @param n 
-/// @return 
 void	*ft_memset(void *s, int c, size_t n)
 {
 	unsigned char	*mem_ptr;

@@ -10,10 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/// @brief 
-/// @param s 
-/// @param c 
-/// @return 
 char	*ft_strrchr(const char *s, int c)
 {
 	char	*ptr;
@@ -22,10 +18,10 @@ char	*ft_strrchr(const char *s, int c)
 	while (*s != '\0')
 	{
 		if (*s == c)
-			ptr = s;
+			ptr = (char *)s;
 		s++;
 	}
 	if (c == '\0')
-		ptr = s;
+		ptr = (char *)s;
 	return (ptr);
 }

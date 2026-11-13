@@ -11,24 +11,21 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
-/// @brief 
-/// @param s 
-/// @param c 
-/// @param n 
-/// @return 
+ 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	*ptr;
+	unsigned long	index;
 
+	index = 0;
 	ptr = (unsigned char *) s;
-	while (*ptr != '\0')
+	while (index != n && ptr[index] != '\0')
 	{
-		if (*ptr == c)
-			return (ptr);
-		ptr++;
+		if (ptr[index] == c)
+			return (&ptr[index]);
+		index++;
 	}
 	if (c == '\0')
-		return (ptr);
+		return (&ptr[index]);
 	return (0);
 }

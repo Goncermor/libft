@@ -10,11 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// Returns 1 if the tested char is ascii / 7 bit and 0 if it's not.
-
-/// @brief 
-/// @param c 
-/// @return 
 int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)

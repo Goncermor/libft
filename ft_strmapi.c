@@ -12,10 +12,6 @@
 
 #include <stdlib.h>
 
-/// @brief 
-/// @param s 
-/// @param f 
-/// @return 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	index;

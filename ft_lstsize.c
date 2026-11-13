@@ -12,9 +12,6 @@
 
 #include "libft.h"
 
-/// @brief 
-/// @param lst 
-/// @return 
 unsigned int	ft_lstsize(t_list *lst)
 {
 	unsigned int	size;

@@ -11,6 +11,10 @@ all: ../libft.a bin/ ${PROGRAMS}
 %: %.c
 	${CC} ${CFLAGS} ${@}.c -o ${OUT_DIR}${@}
 
+test: all ${PROGRAMS:%=test-%}
+
+test-%: %
+
 # requisites
 bin/:
 	mkdir bin

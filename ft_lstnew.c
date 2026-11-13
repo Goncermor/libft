@@ -13,9 +13,6 @@
 #include "libft.h"
 #include <stdlib.h>
 
-/// @brief 
-/// @param content 
-/// @return 
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*new_list;

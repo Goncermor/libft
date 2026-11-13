@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   ft_putendl_fd.c                                   :+:      :+:    :+:    */
+/*   mem2.c                                            :+:      :+:    :+:    */
 /*                                                   +:+ +:+         +:+      */
 /*   By: gcerto-m <gcerto-m@student.42porto.com>   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/11/03 12:20:56 by gcerto-m         #+#    #+#              */
-/*   Updated: 2026/11/06 12:14:53 by gcerto-m        ###   ########.fr        */
+/*   Created: 2026/11/13 11:13:46 by gcerto-m         #+#    #+#              */
+/*   Updated: 2026/11/13 12:17:56 by gcerto-m        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 #include "../libft.h"
 
-int	main(int argc, char *argv[])
+void	test_memmove(void)
 {
-	if (argc > 1)
-	{
-		write(1, "If you see the string you passed as argument below:\n", 52);
-		ft_putendl_fd(argv[1], 1);
-		write(1, "The function works.", 20);
-		return (0);
-	}
+	char	*str;
+
+	str = malloc(7);
+	strcpy(str, "DDAABBCC");
+	ft_memmove(str, str + 2, 4);
+	if (strcmp(str, "AABBBBCC") == 0)
+		printf("ft_memmove \e[1;92mPASS\033[0m\n");
 	else
-	{
-		printf("Invalid argument:\n\tProgram use: %s <string>\n", argv[0]);
-		return (1);
-	}
+		printf("ft_memmove \e[1;91mFAIL\033[0m\n");
+}
+
+int	main(void)
+{
+	usleep(50000);
+	test_memmove();
 }

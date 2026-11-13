@@ -13,9 +13,6 @@
 #include "libft.h"
 #include <unistd.h>
 
-/// @brief 
-/// @param s 
-/// @param fd 
 void	ft_putendl_fd(char *s, int fd)
 {
 	ft_putstr_fd(s, fd);

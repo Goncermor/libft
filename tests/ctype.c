@@ -17,33 +17,34 @@
 
 void	test(int (f1)(int), int (f2)(int), char *fname)
 {
-	bool	error;
 	int		c;
 
 	c = 0;
-	error = false;
+	ft_putstr_fd(fname, 1);
 	while (c != 255)
 	{
 		if ((bool) f1(c) != (bool) f2(c))
 		{
-			error = true;
-			printf("Error: %i", c);
+			ft_putendl_fd(" \e[1;91mFAIL\033[0m", 1);
+			return ;
 		}
 		c++;
 	}
-	ft_putstr_fd(fname, 1);
-	if (error == true)
-		ft_putendl_fd(" \e[1;91mFAIL\033[0m", 1);
-	else
-		ft_putendl_fd(" \e[1;92mPASS\033[0m", 1);
+	ft_putendl_fd(" \e[1;92mPASS\033[0m", 1);
 }
 
 int	main(void)
 {
+	usleep(50000);
 	test(ft_isalnum, isalnum, "ft_isalnum");
+	usleep(50000);
 	test(ft_isalpha, isalpha, "ft_isalpha");
+	usleep(50000);
 	test(ft_isdigit, isdigit, "ft_isdigit");
+	usleep(50000);
 	test(ft_isprint, isprint, "ft_isprint");
+	usleep(50000);
 	test(ft_tolower, tolower, "ft_tolower");
+	usleep(50000);
 	test(ft_toupper, toupper, "ft_toupper");
 }
