@@ -6,10 +6,11 @@
 /*   By: gcerto-m <gcerto-m@student.42porto.com>   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/09 15:21:37 by gcerto-m         #+#    #+#              */
-/*   Updated: 2026/11/09 15:36:04 by gcerto-m        ###   ########.fr        */
+/*   Updated: 2026/11/13 15:56:31 by gcerto-m        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
