@@ -28,8 +28,23 @@ void	test_memmove(void)
 		printf("ft_memmove \e[1;91mFAIL\033[0m\n");
 }
 
+// could not think of a better test...
+void	test_calloc(void)
+{
+	void	*ptr;
+
+	ptr = ft_calloc(0, 0);
+	if (ptr != 0)
+		printf("ft_calloc \e[1;92mPASS\033[0m\n");
+	else
+		printf("ft_calloc \e[1;91mFAIL\033[0m\n");
+	free(ptr);
+}
+
 int	main(void)
 {
 	usleep(50000);
 	test_memmove();
+	usleep(50000);
+	test_calloc();
 }
