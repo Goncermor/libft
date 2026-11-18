@@ -6,23 +6,25 @@
 /*   By: gcerto-m <gcerto-m@student.42porto.com>   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/09 16:07:23 by gcerto-m         #+#    #+#              */
-/*   Updated: 2026/11/16 15:17:48 by gcerto-m        ###   ########.fr        */
+/*   Updated: 2026/11/18 16:40:52 by gcerto-m        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-static unsigned int	char_count(char c, char *str)
+static size_t	word_count(char c, char *str)
 {
-	unsigned int	count;
+	size_t	count;
+	size_t	index;
 
 	count = 0;
-	while (*str != '\0')
+	index = 0;
+	while (str[index])
 	{
-		if (*str == c)
+		if (str[index] != c && (index == 0 || str[index - 1] == c))
 			count++;
-		str++;
+		index++;
 	}
 	return (count);
 }
@@ -61,12 +63,12 @@ char	**ft_split(char const *s, char c)
 
 	index = 0;
 	arr_index = 0;
-	splits = char_count(c, (char *) s);
+	splits = word_count(c, (char *) s);
 	arr = malloc((splits + 1) * sizeof(char *));
 	if (arr == 0)
 		return (0);
 	arr[splits] = 0;
-	while (arr_index <= splits)
+	while (arr_index != splits)
 	{
 		len = strlen_until((char *) & s[index], c) + 1;
 		arr[arr_index] = malloc(len);

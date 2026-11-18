@@ -21,8 +21,8 @@ static int	isspace(int c)
 
 int	ft_atoi(const char *nptr)
 {
-	char	mult;
-	int		result;
+	int	mult;
+	int	result;
 
 	mult = 1;
 	result = 0;
@@ -30,7 +30,7 @@ int	ft_atoi(const char *nptr)
 		nptr++;
 	if (*nptr == '+')
 		nptr++;
-	if (*nptr == '-')
+	else if (*nptr == '-')
 	{
 		mult = -1;
 		nptr++;

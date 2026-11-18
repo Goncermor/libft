@@ -6,7 +6,7 @@
 /*   By: gcerto-m <gcerto-m@student.42porto.com>   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/04 11:44:02 by gcerto-m         #+#    #+#              */
-/*   Updated: 2026/11/09 15:15:22 by gcerto-m        ###   ########.fr        */
+/*   Updated: 2026/11/18 15:31:53 by gcerto-m        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	index;
 
 	index = ft_strlen(dst);
+	if (size <= index)
+		return (size + ft_strlen(src));
 	while (*src != '\0' && index < size - 1)
 	{
 		dst[index] = *src;
@@ -24,7 +26,5 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		index++;
 	}
 	dst[index] = '\0';
-	while (dst[index] != '\0')
-		index++;
-	return (index);
+	return (index + ft_strlen(src));
 }
