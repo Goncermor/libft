@@ -2,7 +2,7 @@
 
 # Description
 
-**libft** is a C library that re-implements a selection of standard libc functions, plus some extra string, output and linked-list utilities. The goal is to understand how these functions work under the hood: memory layout, pointer arithmetic, null-termination, edge cases and dynamic allocation.
+**libft** is a C library that re-implements some libc functions, plus some extra string, output and linked-list utilities. The goal is to understand how these functions work under the hood: memory layout, pointer arithmetic, null-termination, edge cases and dynamic allocation.
 
 The result is a static library, `libft.a`, which can be reused in later 42 projects.
 
@@ -29,17 +29,9 @@ Include the header and link against the library:
 cc -Wall -Wextra -Werror main.c -L. -lft -o program
 ```
 
-## Testing
-
-```sh
-make test   # builds libft.a and runs the external 42_Libft_Tester
-```
-
-The `tests/` directory also contains small hand-written tests grouped by category (`ctype.c`, `str.c`, `mem.c`, `list.c`, ...).
-
 # Functions
 
-## Part 1 — libc functions
+## libc functions
 
 ### Character checks / conversion
 
@@ -79,7 +71,7 @@ The `tests/` directory also contains small hand-written tests grouped by categor
 | `int ft_memcmp(const void *s1, const void *s2, size_t n)` | Compares the first `n` bytes of two memory areas |
 | `void *ft_calloc(size_t nmemb, size_t size)` | Allocates zero-initialised memory for an array |
 
-## Part 2 — Additional functions
+## Additional functions
 
 | Prototype | Description |
 |--|--|
@@ -97,7 +89,7 @@ The `tests/` directory also contains small hand-written tests grouped by categor
 
 ## Linked list functions
 
-All list functions use this structure:
+All list functions use this struct:
 
 ```c
 typedef struct s_list
@@ -122,13 +114,15 @@ typedef struct s_list
 # Resources
 
 ## References
-+ Linux man pages (`man 3 strlcat`, `man 3 memmove`, ...)
++ Linux man pages
 + glibc source code
-+ 42_Libft_Tester: the external tester that `make test` runs
 
 ## Tools
 + Visual Studio Code
++ gdb
++ cc compiler
 
 # AI Use
 
-AI assistants (DeepSeek and Claude) were used to explain concepts and to find and explain bugs in my implementations, such as edge cases in `ft_strncmp`, `ft_strlcat`, `ft_split` and `ft_strtrim`. Every function was written, reviewed and tested by me, and I can explain each line.
+AI assistants (DeepSeek and Claude) were used to explain concepts and to find and explain bugs in my implementations.
+Every function was written, reviewed and tested by me.
