@@ -4,8 +4,8 @@ CC=cc
 AR=ar
 RM=rm -f
 
-CFLAGS=-Wall -Wextra -Werror -c
-ARFLAGS=rv
+CFLAGS=-Wall -Wextra -Werror
+ARFLAGS=rvs
 
 SOURCES=ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c \
@@ -19,11 +19,15 @@ SOURCES=ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
 	ft_lstmap.c
 
-${NAME}:
-	${CC} ${CFLAGS} ${SOURCES}
-	${AR} ${ARFLAGS} ${NAME} ${SOURCES:.c=.o}
+OBJECTS = ${SOURCES:.c=.o}
 
-all: ${NAME}
+${NAME}: ${OBJECTS}
+	${AR} ${ARFLAGS} ${NAME} ${OBJECTS}
+
+%.o: %.c libft.h
+	${CC} ${CFLAGS} -c $< -o $@
+
+all: $(NAME)
 
 clean:
 	${RM} ${SOURCES:.c=.o}
@@ -33,4 +37,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re test
+.PHONY: all clean fclean re
