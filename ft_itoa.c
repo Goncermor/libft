@@ -6,7 +6,7 @@
 /*   By: gcerto-m <gcerto-m@student.42porto.com>   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/06 17:07:03 by gcerto-m         #+#    #+#              */
-/*   Updated: 2026/11/10 16:26:11 by gcerto-m        ###   ########.fr        */
+/*   Updated: 2026/11/20 15:15:10 by gcerto-m        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ char	*ft_itoa(int n)
 
 	num = number_size(n, &len);
 	ptr = malloc(len + 1);
+	if (ptr == 0)
+		return (0);
 	ptr[len] = '\0';
 	len--;
 	if (n < 0)
