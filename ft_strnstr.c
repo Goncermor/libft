@@ -6,7 +6,7 @@
 /*   By: gcerto-m <gcerto-m@student.42porto.com>   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/05 15:13:40 by gcerto-m         #+#    #+#              */
-/*   Updated: 2026/11/20 16:37:37 by gcerto-m        ###   ########.fr        */
+/*   Updated: 2026/11/23 12:00:56 by gcerto-m        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	unsigned int	little_len;
+	size_t	little_len;
 
+	if (*little == '\0')
+		return ((char *)big);
 	little_len = ft_strlen(little);
 	while (len >= little_len && *big != '\0')
 	{
